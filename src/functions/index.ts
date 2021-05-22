@@ -1,2 +1,2 @@
 export { default as hello } from './hello';
-export const otherThing = 123;
+export { default as greet } from './greet';

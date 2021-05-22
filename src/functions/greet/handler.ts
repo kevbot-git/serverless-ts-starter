@@ -6,11 +6,11 @@ import middyfy from '@libs/lambda';
 
 import schema from './schema';
 
-const hello: ValidatedEventAPIGatewayProxyEvent<
+const greet: ValidatedEventAPIGatewayProxyEvent<
   typeof schema
 > = async (event) => formatJSONResponse({
-  message: `Hello ${event.body.name}, welcome to the exciting Serverless world!`,
+  message: `Greetings, ${event.body.name}, welcome to the exciting Serverless world!`,
   event,
 });
 
-export default middyfy(hello);
+export default middyfy(greet);
