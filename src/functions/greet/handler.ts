@@ -9,12 +9,10 @@ import schema from './schema';
 const greet: ValidatedEventAPIGatewayProxyEvent<
   typeof schema
 > = async (event) => {
-  console.log(event);
+  console.log('greet event', event);
+
   return formatJSONResponse({
     message: `Greetings, ${event.body.name}, welcome to the exciting Serverless world!`,
-    event,
   });
 };
-
-export const handler = greet;
-export const wrapper = middyfy(greet);
+export default middyfy(greet);
